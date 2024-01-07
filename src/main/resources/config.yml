@@ -1,0 +1,8 @@
+danger-regions:
+  - "koth"
+
+combat-hooks:
+  combatlogx: true
+
+region-hooks:
+  worldguard: true

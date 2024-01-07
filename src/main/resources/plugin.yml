@@ -1,0 +1,24 @@
+name: AntiNakedKilling
+version: '${project.version}'
+api-version: 1.20
+
+authors:
+  - TechnicallyCoded
+  - harry8668
+
+main: com.tcoded.antinakedkilling.AntiNakedKilling
+
+softdepend:
+  - CombatLogX
+  - WorldGuard
+
+commands:
+  antinakedkilling:
+    description: AntiNakedKilling command
+    permission: antinakedkilling.command.antinakedkilling
+    aliases: [ank]
+
+permissions:
+  antinakedkilling.command.antinakedkilling:
+    default: op
+    description: Main AntiNakedKilling command
