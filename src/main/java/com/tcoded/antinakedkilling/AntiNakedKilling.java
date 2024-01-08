@@ -4,8 +4,10 @@ import com.tcoded.antinakedkilling.commands.AntiNakedKillingCmd;
 import com.tcoded.antinakedkilling.listener.DamageListener;
 import com.tcoded.antinakedkilling.manager.CombatHookManager;
 import com.tcoded.antinakedkilling.manager.RegionHookManager;
+import com.tcoded.folialib.FoliaLib;
 import com.tcoded.legacycolorcodeparser.LegacyColorCodeParser;
 import com.tcoded.lightlibs.bukkitlangutil.BukkitMultiLangUtil;
+import com.tcoded.updatechecker.SimpleUpdateChecker;
 import org.bstats.bukkit.Metrics;
 import org.bstats.charts.SimplePie;
 import org.bukkit.ChatColor;
@@ -20,6 +22,8 @@ public final class AntiNakedKilling extends JavaPlugin {
     private static final int BSTATS_ID = 20663;
     public static final String FALLBACK_LANG = "en_us";
 
+    private FoliaLib foliaLib;
+
     private String serverLang;
     private BukkitMultiLangUtil<String> langUtil;
 
@@ -32,6 +36,7 @@ public final class AntiNakedKilling extends JavaPlugin {
     @Override
     public void onEnable() {
         // Utils
+        this.foliaLib = new FoliaLib(this);
 
         // Config
         saveDefaultConfig();
@@ -53,6 +58,10 @@ public final class AntiNakedKilling extends JavaPlugin {
 
         // Listeners
         this.getServer().getPluginManager().registerEvents(new DamageListener(this), this);
+
+        // Update checker
+        SimpleUpdateChecker.checkUpdate(this, String.format("[%s] ", this.getDescription().getName()), 114395,
+                runnable -> this.foliaLib.getImpl().runAsync(consumer -> runnable.run()));
 
         // bStats
         this.metrics = new Metrics(this, BSTATS_ID);
