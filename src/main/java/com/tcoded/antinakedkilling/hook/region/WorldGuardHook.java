@@ -25,6 +25,11 @@ public class WorldGuardHook implements RegionHook {
     }
 
     @Override
+    public String getName() {
+        return "WorldGuard";
+    }
+
+    @Override
     public boolean isInDangerRegion(Player player) {
         WorldGuard wg = WorldGuard.getInstance();
         RegionContainer regionContainer = wg.getPlatform().getRegionContainer();

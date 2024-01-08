@@ -91,6 +91,10 @@
             <id>devmart-tcoded</id>
             <url>https://nexuslite.gcnt.net/repos/tcoded/</url>
         </repository>
+        <repository>
+            <id>jitpack</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -183,6 +187,16 @@
             <artifactId>SpigotUpdateChecker</artifactId>
             <version>1.1.2</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.tcoded.lightlibs</groupId>
+            <artifactId>BukkitMultiLangUtil</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.lightlibs</groupId>
+            <artifactId>LegacyColorCodeParser</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 </project>

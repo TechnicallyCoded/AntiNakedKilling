@@ -8,7 +8,6 @@ import com.tcoded.antinakedkilling.struct.CombatHook;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 
 import java.util.UUID;
@@ -22,6 +21,11 @@ public class CombatLogXHook implements CombatHook {
         this.plugin = plugin;
         PluginManager pluginManager = Bukkit.getPluginManager();
         this.clx = (ICombatLogX) pluginManager.getPlugin("CombatLogX");
+    }
+
+    @Override
+    public String getName() {
+        return "CombatLogX";
     }
 
     @Override

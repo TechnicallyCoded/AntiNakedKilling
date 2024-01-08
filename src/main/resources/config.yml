@@ -1,8 +1,29 @@
-danger-regions:
-  - "koth"
+# ----------------------------------------
+# Anti-Naked Killing by TechnicallyCoded
+#
+# Description:
+# Prevent players from killing other players without any armor
+#
+# Supported languages:
+# - en_us - American English (default)
+# - en_gb - British English
+# - fr_fr - French
+# - nl_nl - Dutch
+# ----------------------------------------
 
+# The language that should be used
+# See supported languages above
+lang: "en_us"
+
+# Name of the regions that are considered as danger regions
+# PvP will always be possible in these regions even if the victim isn't wearing any armor
+danger-regions:
+  - "koth" # King of the Hill - Change this region name to any region on your server
+
+# Which plugins should be allowed to contribute information about a player being in combat?
 combat-hooks:
   combatlogx: true
 
+# Which plugins should be allowed to contribute information about a player being in a danger region?
 region-hooks:
   worldguard: true

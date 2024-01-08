@@ -66,7 +66,8 @@ public class DamageListener implements Listener {
 
         // cancel the damage event
         event.setCancelled(true);
+
         // send the attacker a message to say they cant kill the player
-        attackerEntity.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lHey!&7 You can't attack naked players!"));
+        attackerEntity.sendMessage(this.plugin.getLangUtil().format("pvp.cancelled-naked"));
     }
 }

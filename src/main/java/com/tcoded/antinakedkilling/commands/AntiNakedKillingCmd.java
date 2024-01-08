@@ -21,8 +21,8 @@ public class AntiNakedKillingCmd implements CommandExecutor, TabCompleter {
     }
 
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
-        this.plugin.reloadConfig();
-        commandSender.sendMessage(ChatColor.GREEN + "Config reloaded!");
+        this.plugin.reloadAllConfig();
+        commandSender.sendMessage(this.plugin.getLangUtil().format("reload-success"));
 
         return true;
     }

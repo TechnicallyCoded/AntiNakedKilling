@@ -5,6 +5,12 @@ import java.util.UUID;
 public interface CombatHook {
 
     /**
+     * Get the name of the combat hook
+     * @return The name of the combat hook
+     */
+    String getName();
+
+    /**
      * Check if the provided player is in combat
      * @return True if the player is in combat, false otherwise
      */
@@ -16,5 +22,4 @@ public interface CombatHook {
      * @return The UUID of the player the provided player is in combat with, or null if not in combat
      */
     UUID getCombatTarget(UUID uuid);
-
 }
