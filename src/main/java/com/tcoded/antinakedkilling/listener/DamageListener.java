@@ -68,6 +68,6 @@ public class DamageListener implements Listener {
         event.setCancelled(true);
 
         // send the attacker a message to say they cant kill the player
-        attackerEntity.sendMessage(this.plugin.getLangUtil().format("pvp.cancelled-naked"));
+        attackerEntity.sendMessage(this.plugin.getLangUtil().getFormattedOrEmpty("pvp.cancelled-naked"));
     }
 }

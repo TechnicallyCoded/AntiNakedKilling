@@ -43,7 +43,7 @@ public final class AntiNakedKilling extends JavaPlugin {
         loadConfigOptions();
 
         // Post Config Utils
-        this.langUtil = BukkitMultiLangUtil.createCustom(this, FALLBACK_LANG, serverLang, this::formatMessage);
+        if (!loadLangConfigs()) return;
 
         // Managers
         this.combatHookManager = new CombatHookManager(this);
@@ -85,8 +85,27 @@ public final class AntiNakedKilling extends JavaPlugin {
         ));
     }
 
+    private boolean loadLangConfigs() {
+        BukkitMultiLangUtil<String> langUtilTmp = BukkitMultiLangUtil.createCustom(this, FALLBACK_LANG, serverLang, this::formatMessage);
+
+        try {
+            langUtilTmp.loadFallbackLang();
+            langUtilTmp.loadServerLang();
+        } catch (Exception e) {
+            getLogger().severe("Failed to load language files! Aborting startup!");
+            e.printStackTrace();
+            return false;
+        }
+
+        this.langUtil = langUtilTmp;
+
+        return true;
+    }
+
     public void reloadAllConfig() {
         this.reloadConfig();
+        this.loadConfigOptions();
+        this.loadLangConfigs();
         this.applyConfigOptions();
     }
 
@@ -96,6 +115,11 @@ public final class AntiNakedKilling extends JavaPlugin {
     }
 
     private boolean applyConfigOptions() {
+        // Cleanup in case of reload
+        this.combatHookManager.removeAllHooks();
+        this.regionHookManager.removeAllHooks();
+
+        // Init
         this.combatHookManager.init();
         this.regionHookManager.init(dangerRegionNames);
 

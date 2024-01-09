@@ -21,8 +21,22 @@ public class AntiNakedKillingCmd implements CommandExecutor, TabCompleter {
     }
 
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
-        this.plugin.reloadAllConfig();
-        commandSender.sendMessage(this.plugin.getLangUtil().format("reload-success"));
+        if (args.length < 1) {
+            commandSender.sendMessage(this.plugin.getLangUtil().getFormattedOrEmpty("command.antinakedkilling.usage"));
+            return true;
+        }
+
+        String arg0Lower = args[0].toLowerCase();
+
+        switch (arg0Lower) {
+            case "reload":
+                this.plugin.reloadAllConfig();
+                commandSender.sendMessage(this.plugin.getLangUtil().getFormattedOrEmpty("reload-success"));
+                break;
+            default:
+                commandSender.sendMessage(this.plugin.getLangUtil().getFormattedOrEmpty("command.antinakedkilling.usage"));
+                break;
+        }
 
         return true;
     }

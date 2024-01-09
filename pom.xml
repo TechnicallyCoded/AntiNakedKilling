@@ -6,7 +6,7 @@
 
     <groupId>com.tcoded</groupId>
     <artifactId>AntiNakedKilling</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>AntiNakedKilling</name>
@@ -207,7 +207,7 @@
         <dependency>
             <groupId>com.tcoded.lightlibs</groupId>
             <artifactId>BukkitMultiLangUtil</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
         </dependency>
         <dependency>
             <groupId>com.github.lightlibs</groupId>
