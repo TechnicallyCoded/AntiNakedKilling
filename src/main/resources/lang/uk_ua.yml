@@ -1,0 +1,6 @@
+reload-success: "&aКонфігурацію перезавантажено!"
+command:
+  antinakedkilling:
+    usage: "&cВикористання: /antinakedkilling reload"
+pvp:
+  cancelled-naked: "&c&lГей!&7 Ви не можете атакувати голих гравців!"

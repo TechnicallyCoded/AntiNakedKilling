@@ -1,0 +1,6 @@
+reload-success: "&a配置已重新加载！"
+command:
+  antinakedkilling:
+    usage: "&c用法: /antinakedkilling reload"
+pvp:
+  cancelled-naked: "&c&l嘿！&7 你不能攻击裸露的玩家！"
