@@ -1,0 +1,6 @@
+reload-success: "&aकॉन्फ़िगरेशन पुनः लोड किया गया!"
+command:
+  antinakedkilling:
+    usage: "&cउपयोग: /antinakedkilling reload"
+pvp:
+  cancelled-naked: "&c&lअरे!&7 आप नग्न खिलाड़ियों पर हमला नहीं कर सकते!"

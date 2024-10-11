@@ -1,0 +1,6 @@
+reload-success: "&aKonfiguration neu geladen!"
+command:
+  antinakedkilling:
+    usage: "&cVerwendung: /antinakedkilling reload"
+pvp:
+  cancelled-naked: "&c&lHey!&7 Du kannst keine nackten Spieler angreifen!"
