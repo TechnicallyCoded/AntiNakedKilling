@@ -20,6 +20,13 @@ lang: "en_us"
 danger-regions:
   - "koth" # King of the Hill - Change this region name to any region on your server
 
+# Can players damage naked players?
+allow-player-damage: false
+# Can mobs damage naked players?
+allow-mob-damage: false
+# Can other damage sources damage naked players? (For example: lava, fire, drowning, suffocation, ...)
+allow-other-damage: true
+
 # Which plugins should be allowed to contribute information about a player being in combat?
 combat-hooks:
   combatlogx: true
@@ -27,3 +34,4 @@ combat-hooks:
 # Which plugins should be allowed to contribute information about a player being in a danger region?
 region-hooks:
   worldguard: true
+  # request more on Github!
