@@ -30,6 +30,8 @@ allow-other-damage: true
 # Which plugins should be allowed to contribute information about a player being in combat?
 combat-hooks:
   combatlogx: true
+  pvpmanagerlite: true
+  # request more on Github!
 
 # Which plugins should be allowed to contribute information about a player being in a danger region?
 region-hooks:
